@@ -1,0 +1,9 @@
+#recipe Blog
+
+// Customize your settings and add new ones here
+Settings[Keys.Host] = "peterbrooksbank.com";
+Settings[BlogKeys.Title] = "Peter Brooksbank";
+Settings[BlogKeys.Description] = "Welcome!";
+Settings[BlogKeys.Intro] = "A blog about software";
+
+// Add any pipeline customizations here
