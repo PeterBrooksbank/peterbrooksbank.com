@@ -5,12 +5,13 @@
 		<link>http://peterbrooksbank.com/</link>
 		<description>Hi, I'm Peter</description>
 		<copyright>2019</copyright>
-		<pubDate>Sun, 07 Jul 2019 19:15:22 GMT</pubDate>
-		<lastBuildDate>Sun, 07 Jul 2019 19:15:22 GMT</lastBuildDate>
+		<pubDate>Sun, 07 Jul 2019 22:58:56 GMT</pubDate>
+		<lastBuildDate>Sun, 07 Jul 2019 22:58:56 GMT</lastBuildDate>
 		<item>
 			<title>Creating a blog with Wyam</title>
 			<link>http://peterbrooksbank.com/posts/creating-blog-wyam</link>
 			<description>&lt;p&gt;By far the biggest reason I never managed to get a blog out the door previously is that I can't think of anything to write about that someone else hasn't already written in a more concise and insightful explanation than I can achieve. I use Twitter for following people in the industry and a common piece of advice I see is to write the posts for yourself as an archive of what you've done. So what better place to start than how this blog was made?&lt;/p&gt;</description>
+			<enclosure url="http://peterbrooksbank.com/assets/img/ripple-scaled-down.webp" length="0" type="image" />
 			<guid>http://peterbrooksbank.com/posts/creating-blog-wyam</guid>
 			<pubDate>Sun, 07 Jul 2019 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;By far the biggest reason I never managed to get a blog out the door previously is that I can't think of anything to write about that someone else hasn't already written in a more concise and insightful explanation than I can achieve. I use Twitter for following people in the industry and a common piece of advice I see is to write the posts for yourself as an archive of what you've done. So what better place to start than how this blog was made?&lt;/p&gt;

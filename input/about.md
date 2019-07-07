@@ -1,3 +1,3 @@
 Title: About Me
 ---
- My name is Peter Brooksbank. I'm a software developer. I work on a global cloud-hosted SAAS product. I've worked on e-commerce sites, both back-end and front-end, across a variety of verticals for B2B and B2C clients. Join me for a foray into things that peak my interest.
+ My name is Peter Brooksbank. I'm a software developer. I work on a global cloud-hosted SAAS product. I've worked on e-commerce sites, both back-end and front-end, across a variety of verticals for B2B and B2C clients.

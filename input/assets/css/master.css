@@ -1,5 +1,6 @@
 #intro-header {
   background-color: #555555;
+  max-height: 450px;
 }
 .intro-header .site-heading .subheading {
   line-height: 1.6;
