@@ -4,15 +4,16 @@
 	<id>http://peterbrooksbank.com/</id>
 	<title>Peter Brooksbank</title>
 	<rights>2019</rights>
-	<updated>2019-07-03T18:13:43Z</updated>
-	<subtitle>Welcome!</subtitle>
+	<updated>2019-07-07T16:50:36Z</updated>
+	<subtitle>Hi, I'm Peter</subtitle>
 	<entry>
-		<link href="http://peterbrooksbank.com/posts/first-post" />
-		<id>http://peterbrooksbank.com/posts/first-post</id>
-		<title>First Post</title>
-		<updated>2016-01-01T00:00:00Z</updated>
-		<content>&lt;p&gt;This is my first post!&lt;/p&gt;
+		<link href="http://peterbrooksbank.com/posts/creating-blog-wyam" />
+		<id>http://peterbrooksbank.com/posts/creating-blog-wyam</id>
+		<title>Creating a blog with Wyam</title>
+		<updated>2019-07-07T00:00:00Z</updated>
+		<content>&lt;p&gt;By far the biggest reason I never managed to get a blog out the door previously is that I can't think of anything to write about that someone else hasn't written about with, what I think, is a more concise and insightful explanation. I use Twitter for following people in the industry and a common piece of advice I see is to write the posts for yourself as an archive of what you've done. So what better place to start than how this blog was made?&lt;/p&gt;
+&lt;p&gt;I've attempted to start a blog several times over the years at this point. It never seems to get out the door, whether it's making sure the design is correct, the performance as fast as possible, the CI/CD pipelines are setup or that SSL is correctly configured. Still, it never gets out the door. Having been reading &lt;a href="https://basecamp.com/books/rework"&gt;ReWork&lt;/a&gt; lately I decided I can treat my blog like an MVP, getting something out the door and refining it later.&lt;/p&gt;
 </content>
-		<summary>&lt;p&gt;This is my first post!&lt;/p&gt;</summary>
+		<summary>&lt;p&gt;By far the biggest reason I never managed to get a blog out the door previously is that I can't think of anything to write about that someone else hasn't written about with, what I think, is a more concise and insightful explanation. I use Twitter for following people in the industry and a common piece of advice I see is to write the posts for yourself as an archive of what you've done. So what better place to start than how this blog was made?&lt;/p&gt;</summary>
 	</entry>
 </feed>
