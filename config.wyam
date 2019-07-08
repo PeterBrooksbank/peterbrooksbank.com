@@ -8,3 +8,22 @@ Settings[BlogKeys.Intro] = "I write code. I work on a global cloud-hosted SAAS p
 Settings[BlogKeys.Image] = "/assets/img/ripple-scaled-down.webp";
 
 // Add any pipeline customizations here
+#n Wyam.Minification
+
+Pipelines.InsertAfter
+(
+    "Resources",
+    "MinifyCSS",
+    ReadFiles("**/*.css"),
+    MinifyCss(),
+    WriteFiles(".css")
+);
+
+Pipelines.InsertAfter
+(
+    "Resources",
+    "MinifyJS",
+    ReadFiles("**/*.js"),
+    MinifyJs(),
+    WriteFiles(".js")
+);

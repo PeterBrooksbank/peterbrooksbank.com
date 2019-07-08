@@ -5,11 +5,13 @@
                         Copyright © @DateTime.Now.Year by Peter Brooksbank. The opinions expressed herein are my own and do not represent my employer's view in any way.
                         <br />
                         @if (Context.String(BlogKeys.RssPath) != null) {
-                            <a href="@Context.GetLink(Context.String(BlogKeys.RssPath))"><i class="fa fa-rss"></i> RSS Feed</a>
+                            <a class="rss" href="@Context.GetLink(Context.String(BlogKeys.RssPath))">
+                                <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24"><title>  RSS icon</title><path d="M19.2 24C19.2 13.5 10.5 4.8 0 4.8V0c13.2 0 24 10.8 24 24h-4.8zM3.3 17.4c1.8 0 3.3 1.5 3.3 3.3 0 1.8-1.5 3.3-3.3 3.3C1.5 24 0 22.5 0 20.7s1.5-3.3 3.3-3.3zM15.9 24h-4.7c0-6.2-5.1-11.2-11.2-11.2V8.1c8.7 0 15.9 7.2 15.9 15.9z"/></svg> RSS Feed</a>
                         } 
                         @(Context.String(BlogKeys.RssPath) != null && Context.String(BlogKeys.AtomPath) != null ? "|" : "")
                         @if (Context.String(BlogKeys.AtomPath) != null) { 
-                            <a href="@Context.GetLink(Context.String(BlogKeys.AtomPath))"><i class="fa fa-rss"></i> Atom Feed</a>
+                            <a class="rss" href="@Context.GetLink(Context.String(BlogKeys.AtomPath))">
+                                <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24"><title>  RSS icon</title><path d="M19.2 24C19.2 13.5 10.5 4.8 0 4.8V0c13.2 0 24 10.8 24 24h-4.8zM3.3 17.4c1.8 0 3.3 1.5 3.3 3.3 0 1.8-1.5 3.3-3.3 3.3C1.5 24 0 22.5 0 20.7s1.5-3.3 3.3-3.3zM15.9 24h-4.7c0-6.2-5.1-11.2-11.2-11.2V8.1c8.7 0 15.9 7.2 15.9 15.9z"/></svg> Atom Feed</a>
                         }
                     </p>
                 </div>
