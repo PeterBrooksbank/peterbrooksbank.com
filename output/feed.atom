@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
+	<link rel="self" href="http://peterbrooksbank.com/" />
 	<id>http://peterbrooksbank.com/</id>
 	<title>Peter Brooksbank</title>
-	<link rel="self" href="http://peterbrooksbank.com/" />
 	<rights>2019</rights>
-	<updated>2019-07-08T21:36:26Z</updated>
+	<updated>2019-07-08T22:22:03Z</updated>
 	<logo>http://peterbrooksbank.com/assets/img/ripple-scaled-down.webp</logo>
 	<subtitle>Hi, I'm Peter</subtitle>
 	<entry>
-		<id>http://peterbrooksbank.com/posts/creating-blog-wyam</id>
-		<title>Creating a blog with Wyam</title>
 		<link href="http://peterbrooksbank.com/posts/creating-blog-wyam" />
 		<link rel="enclosure" type="image" href="http://peterbrooksbank.com/assets/img/ripple-scaled-down.webp" />
+		<id>http://peterbrooksbank.com/posts/creating-blog-wyam</id>
+		<title>Creating a blog with Wyam</title>
 		<updated>2019-07-07T00:00:00Z</updated>
 		<content>&lt;p&gt;By far the biggest reason I never managed to get a blog out the door previously is that I can't think of anything to write about that someone else hasn't already written in a more concise and insightful explanation than I can achieve. I use Twitter for following people in the industry and a common piece of advice I see is to write the posts for yourself as an archive of what you've done. So what better place to start than how this blog was made?&lt;/p&gt;
 &lt;p&gt;I've attempted to start a blog several times over the years at this point. It never seems to get out the door, whether it's making sure the design is correct, the performance as fast as possible, the CI/CD pipelines are setup or that SSL is correctly configured. Still, it never gets out the door. Having read &lt;a href="https://basecamp.com/books/rework"&gt;ReWork&lt;/a&gt; lately I decided to treat my blog like an MVP (mimimum viable product), getting something out the door and refining it later.&lt;/p&gt;
