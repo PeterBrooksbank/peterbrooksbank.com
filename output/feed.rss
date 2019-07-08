@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+	<channel>
+		<title>Peter Brooksbank</title>
+		<link>http://peterbrooksbank.com/</link>
+		<description>Hi, I'm Peter</description>
+		<copyright>2019</copyright>
+		<pubDate>Mon, 08 Jul 2019 22:58:29 GMT</pubDate>
+		<lastBuildDate>Mon, 08 Jul 2019 22:58:29 GMT</lastBuildDate>
+		<item>
+			<title>Creating a blog with Wyam</title>
+			<link>http://peterbrooksbank.com/posts/creating-blog-wyam</link>
+			<description>&lt;p&gt;By far the biggest reason I never managed to get a blog out the door previously is that I can't think of anything to write about that someone else hasn't already written in a more concise and insightful explanation than I can achieve. I use Twitter for following people in the industry and a common piece of advice I see is to write the posts for yourself as an archive of what you've done. So what better place to start than how this blog was made?&lt;/p&gt;</description>
+			<enclosure url="http://peterbrooksbank.com/assets/img/ripple-scaled-down.webp" length="0" type="image" />
+			<guid>http://peterbrooksbank.com/posts/creating-blog-wyam</guid>
+			<pubDate>Sun, 07 Jul 2019 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;p&gt;By far the biggest reason I never managed to get a blog out the door previously is that I can't think of anything to write about that someone else hasn't already written in a more concise and insightful explanation than I can achieve. I use Twitter for following people in the industry and a common piece of advice I see is to write the posts for yourself as an archive of what you've done. So what better place to start than how this blog was made?&lt;/p&gt;
+&lt;p&gt;I've attempted to start a blog several times over the years at this point. It never seems to get out the door, whether it's making sure the design is correct, the performance as fast as possible, the CI/CD pipelines are setup or that SSL is correctly configured. Still, it never gets out the door. Having read &lt;a href="https://basecamp.com/books/rework"&gt;ReWork&lt;/a&gt; lately I decided to treat my blog like an MVP (mimimum viable product), getting something out the door and refining it later.&lt;/p&gt;
+&lt;h2 id="why-wyam"&gt;Why Wyam&lt;/h2&gt;
+&lt;p&gt;I have a few key considerations when it comes to creating a blog:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I want it to be fast&lt;/li&gt;
+&lt;li&gt;Creating a new post should be simple&lt;/li&gt;
+&lt;li&gt;I don't want to write the entire structure myself (blogs are largely a solved problem) but I want to be in control&lt;/li&gt;
+&lt;li&gt;I want it to be in a language I've worked with before (less cognitive load)&lt;/li&gt;
+&lt;li&gt;I don't want to use a platform that gates posts&lt;/li&gt;
+&lt;li&gt;I want to host it for free&lt;/li&gt;
+&lt;li&gt;I want deployment to be simple&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The fastest site is normally the one which does the least. A static site doesn't need to run a bunch of logic just to return a page, our page is just an asset to serve. There are many static site generators and a lot of them are geared towards (or have options) for creating a blog. After some consideration I chose &lt;a href="https://wyam.io/"&gt;Wyam&lt;/a&gt;. There are a number of reasons for this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It's written in C# and is using .Net Core. I'm fairly comfortable with C# and have been wanting to look more at .Net Core. This seems like a good avenue into it&lt;/li&gt;
+&lt;li&gt;RSS and Atom feeds out of the box&lt;/li&gt;
+&lt;li&gt;Fast to get going, I was up and running in a couple of minutes&lt;/li&gt;
+&lt;li&gt;Some simple themes that are easy to customise&lt;/li&gt;
+&lt;li&gt;Posts are just markdown files&lt;/li&gt;
+&lt;li&gt;OSS on GitHub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Within a few minutes of installing the Wyam CLI tool, following the usage instructions and making some configuration changes to personalise the blog to myself, I had a site up and running locally. I just needed somewhere to host it.&lt;/p&gt;
+&lt;h2 id="hosting-on-netlify"&gt;Hosting on Netlify&lt;/h2&gt;
+&lt;p&gt;I attended a local dev group evening a number of months back and one of the talks was given by a dev advocate for &lt;a href="https://www.netlify.com/"&gt;Netlify&lt;/a&gt;. Netlify is, at it's a core, a static site host. It takes care of deployment and includes the ability to use a custom domain and automatically provision a Let's Encrypt certificate for it. They provide preview sites for every deploy that's done and any deploy can be chosen to be published as the live version, taking effect in only a few seconds. Deployments can be simply done by pointing at a GitHub repo and allowing webhooks to post whenever commits are pushed. Best of all, it's free for my purposes (as a side note the Wyam site is hosted on Netlify). I've found using Netlify to be fast and intuitive and it suits my needs for the present time.&lt;/p&gt;
+&lt;h2 id="putting-it-together"&gt;Putting it together&lt;/h2&gt;
+&lt;p&gt;Having constantly put off or scrapping blogs before getting them out there, despite sometimes spending a lot of time on them, I found that within a couple of hours of sticking to the MVP strategy I had my blog choices made and had deployed it. Sure it's still using one of the out of the box themes but it's clean and readable which is good enough for an MVP. I can tweak the design going forward to suit my tastes and in the meantime I'll still have a blog out there instead of languishing forever in a repo. Focusing on blogging for myself as an archive also removed the pressure of finding something novel and insightful to write about. Hopefully it also provides something useful to someone else who stumbles across it.&lt;/p&gt;
+</content:encoded>
+		</item>
+	</channel>
+</rss>
