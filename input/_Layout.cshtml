@@ -32,6 +32,8 @@
         <meta property="og:url" content="@Context.GetLink(Model, true)" />
         <!-- TODO: More social graph meta tags -->
 
+        @Html.Partial("_InlineCSS")
+
         <script src="@Context.GetLink("/assets/js/jquery.min.js")"></script>
         <script src="@Context.GetLink("/assets/js/bootstrap.min.js")" defer async></script>     
                         
@@ -113,11 +115,10 @@
                         @Html.Partial("_Footer")
                 </footer> 
 
-                <link href="@Context.GetLink("/assets/css/bootstrap.min.css")" rel="stylesheet" defer async />
-                <link href="@Context.GetLink("/assets/css/highlight.css")" rel="stylesheet" defer async />
-                <link href="@Context.GetLink("/assets/css/clean-blog.css")" rel="stylesheet"  defer async />
-                <link href="@Context.GetLink("/assets/css/master.css")" rel="stylesheet"  defer async />
-                
+                <link href="@Context.GetLink("/assets/css/bootstrap.min.css")" rel="stylesheet" />
+                <link href="@Context.GetLink("/assets/css/clean-blog.css")" rel="stylesheet" />
+                <link href="@Context.GetLink("/assets/css/master.css")" rel="stylesheet"/>
+
                 <script src="@Context.GetLink("/assets/js/highlight.pack.js")"></script>   
                 <script src="@Context.GetLink("/assets/js/clean-blog.js")" defer async></script>
                 
