@@ -4,7 +4,7 @@ Tags:
     - blogging
     - wyam
 ---
-By far the biggest reason I never managed to get a blog out the door previously is that I can't think of anything to write about that someone else hasn't already written in a more concise and insightful explanation than I can achieve. I use Twitter for following people in the industry and a common piece of advice I see is to write the posts for yourself as an archive of what you've done. So what better place to start than how this blog was made?
+A common piece of advice I see on Twitter from people in the industry with blogs is to write the posts for yourself as an archive of what you've done. So what better place to start than this blog?
 
 I've attempted to start a blog several times over the years at this point. It never seems to get out the door, whether it's making sure the design is correct, the performance as fast as possible, the CI/CD pipelines are setup or that SSL is correctly configured. Still, it never gets out the door. Having read [ReWork](https://basecamp.com/books/rework) lately I decided to treat my blog like an MVP (mimimum viable product), getting something out the door and refining it later. 
 
@@ -20,21 +20,21 @@ I have a few key considerations when it comes to creating a blog:
 * I want to host it for free
 * I want deployment to be simple
 
-The fastest site is normally the one which does the least. A static site doesn't need to run a bunch of logic just to return a page, our page is just an asset to serve. There are many static site generators and a lot of them are geared towards (or have options) for creating a blog. After some consideration I chose [Wyam](https://wyam.io/). There are a number of reasons for this:
+The fastest you can get with code is to do nothing. A static site means our page is just an asset to serve, no back-end controllers performing logic to decide the page content or render it out. There are many static site generators and a lot of them have options for creating a blog. After some consideration I chose [Wyam](https://wyam.io/). There are a number of reasons for this:
 
-* It's written in C# and is using .Net Core. I'm fairly comfortable with C# and have been wanting to look more at .Net Core. This seems like a good avenue into it
+* It's written in C# and is using .Net Core. I'm fairly comfortable with C# and have been wanting to look more at .Net Core. Wyam pipelines may be a good avenue into it
 * RSS and Atom feeds out of the box
 * Fast to get going, I was up and running in a couple of minutes
 * Some simple themes that are easy to customise
-* Posts are just markdown files
+* Posts are just Markdown files
 * OSS on GitHub
 
 Within a few minutes of installing the Wyam CLI tool, following the usage instructions and making some configuration changes to personalise the blog to myself, I had a site up and running locally. I just needed somewhere to host it.
 
 ## Hosting on Netlify
 
-I attended a local dev group evening a number of months back and one of the talks was given by a dev advocate for [Netlify](https://www.netlify.com/). Netlify is, at it's a core, a static site host. It takes care of deployment and includes the ability to use a custom domain and automatically provision a Let's Encrypt certificate for it. They provide preview sites for every deploy that's done and any deploy can be chosen to be published as the live version, taking effect in only a few seconds. Deployments can be simply done by pointing at a GitHub repo and allowing webhooks to post whenever commits are pushed. Best of all, it's free for my purposes (as a side note the Wyam site is hosted on Netlify). I've found using Netlify to be fast and intuitive and it suits my needs for the present time.
+I attended a local dev group evening a number of months back and one of the talks was given by a dev advocate for [Netlify](https://www.netlify.com/). Netlify is, at it's a core, a static site host. It takes care of deployment and includes the ability to use a custom domain and automatically provision a Let's Encrypt certificate for it. They provide preview sites for every deploy that's done and any deploy can be chosen to be published as the live version, taking effect in only a few seconds. Deployments can be achieved by pointing at a GitHub repo and allowing webhooks to post whenever commits are pushed. Best of all, it's free for my purposes (I didn't realise until later but the Wyam site is hosted on Netlify). I've found using Netlify to be fast and intuitive and it suits my needs for the present time.
 
 ## Putting it together
 
-Having constantly put off or scrapping blogs before getting them out there, despite sometimes spending a lot of time on them, I found that within a couple of hours of sticking to the MVP strategy I had my blog choices made and had deployed it. Sure it's still using one of the out of the box themes but it's clean and readable which is good enough for an MVP. I can tweak the design going forward to suit my tastes and in the meantime I'll still have a blog out there instead of languishing forever in a repo. Focusing on blogging for myself as an archive also removed the pressure of finding something novel and insightful to write about. Hopefully it also provides something useful to someone else who stumbles across it.
+Having constantly spent a lot of time on scrapped blogs, I found that within a couple of hours of sticking to the MVP strategy I had my blog choices made and had deployed it. Sure it's still using one of the out of the box themes but it's clean and readable which is good enough for an MVP. I can tweak the design going forward to suit my tastes and in the meantime I'll still have a blog on the internet instead of languishing forever in a repo. Focusing on blogging for myself as an archive also removed the pressure of finding something novel and insightful to write about. Hopefully this brief overview of the choices I made provides something useful to someone else who stumbles across it.
