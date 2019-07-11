@@ -30,7 +30,7 @@
         <meta property="og:title" content="@PageTitle" />
         @* <meta property="og:image" content="@Blog.Image" /> *@
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="@Context.GetLink(Model, true)" />
+        <meta property="og:url" content="@Context.GetLink(Model, true)" />       
 
         <script src="@Context.GetLink("/assets/js/jquery-3.4.1.slim.min.js")"></script>
         <script src="@Context.GetLink("/assets/js/bootstrap.min.js")" defer async></script>
@@ -114,7 +114,9 @@
                 </footer> 
 
                 <link href="@Context.GetLink("/assets/css/bootstrap.min.css")" rel="stylesheet" />
+                <link href="@Context.GetLink("/assets/css/clean-blog.css")" rel="stylesheet" />
                 @await Html.PartialAsync("_InlineCSS")
+
                 <script src="@Context.GetLink("/assets/js/highlight.pack.js")"></script>   
                 <script src="@Context.GetLink("/assets/js/clean-blog.js")" defer async></script>
                 
