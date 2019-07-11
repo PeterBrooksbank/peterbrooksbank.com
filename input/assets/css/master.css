@@ -168,3 +168,8 @@ code {
     float: none;
   }
 }
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}

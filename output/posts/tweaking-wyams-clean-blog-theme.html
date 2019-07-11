@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>Peter Brooksbank - Creating a blog with Wyam</title>
+        <title>Peter Brooksbank - Improving blog page load time</title>
         <meta name="description" content="Hi, I&#x27;m Peter" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -19,9 +19,9 @@
         <meta name="msapplication-tooltip" content="Peter Brooksbank" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="Peter Brooksbank - Creating a blog with Wyam" />
+        <meta property="og:title" content="Peter Brooksbank - Improving blog page load time" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://peterbrooksbank.com/posts/creating-blog-wyam" />
+        <meta property="og:url" content="http://peterbrooksbank.com/posts/tweaking-wyams-clean-blog-theme" />
 
         <script src="/assets/js/jquery-3.4.1.slim.min.js"></script>
         <script src="/assets/js/bootstrap.min.js" defer async></script>
@@ -75,11 +75,13 @@
 
     
 <div class="post-heading">
-    <h1>Creating a blog with Wyam</h1>
+    <h1>Improving blog page load time</h1>
     <div class="meta">        
-Published on 07 July 2019<br>    </div>
+Published on 11 July 2019<br>    </div>
         <div class="tags">
                     <a role="button" href="/tags/blogging" class="btn btn-default btn-xs">blogging</a>
+                    <a role="button" href="/tags/load-time" class="btn btn-default btn-xs">load time</a>
+                    <a role="button" href="/tags/performance" class="btn btn-default btn-xs">performance</a>
                     <a role="button" href="/tags/wyam" class="btn btn-default btn-xs">wyam</a>
         </div>     
 </div>
@@ -94,33 +96,115 @@ Published on 07 July 2019<br>    </div>
                                 <div id="content" class="col-md-12">
                                         
 
-<p>A common piece of advice I see on Twitter from people in the industry with blogs is to write the posts for yourself as an archive of what you've done. So what better place to start than this blog?</p>
-<p>I've attempted to start a blog several times over the years at this point. It never seems to get out the door, whether it's making sure the design is correct, the performance as fast as possible, the CI/CD pipelines are setup or that SSL is correctly configured. Still, it never gets out the door. Having read <a href="https://basecamp.com/books/rework">ReWork</a> lately I decided to treat my blog like an MVP (mimimum viable product), getting something out the door and refining it later.</p>
-<h2 id="why-wyam">Why Wyam</h2>
-<p>I have a few key considerations when it comes to creating a blog:</p>
+<p>The default Wyam blog themes are a good starting point but what can we do to improve load times when we apply a critical eye?</p>
+<p>When I created the blog I chose to use the CleanBlog theme (<a href="https://wyam.io/recipes/blog/themes/preview/cleanblog/">preview</a>). This, along with a few others, are provided out of the box by Wyam. They provide an excellent starting point to hit the ground running and a clean base to begin modifying.</p>
+<h2 id="where-to-start">Where to start?</h2>
+<p>Most blogs have the same set of initial priorities, ranging from the overall design to getting some eyes on posts. However, we all have a different order for these priorities. For me the first aspect is page load time, I like making things fast. I get passionate about taking a hot spot in a critical path and finding ways to improve it. Often an impact can be made by simplifying the existing code, refactoring it to reduce the work done and hopefully making it clearer to read in the process.</p>
+<p>A good place to start with the speed of web pages is <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights by Google</a> which analyzes the content and then generates suggestions to make that page faster. As performance is now one of the key metrics Google uses for site ranking in their search results, it's worthwhile having a look to see what gets suggested. The scores can fluctuate by a couple of points between runs but I found that several runs gave an average of 73 for the home page. The key takeaway was the time required for render-blocking resources which looked like this:</p>
+<table class="table">
+<thead>
+<tr>
+<th>URL</th>
+<th>Size</th>
+<th>Potential Savings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>…css/bootstrap.min.css(wyam.io)</td>
+<td>20 KB</td>
+<td>1,080 ms</td>
+</tr>
+<tr>
+<td>…css/highlight.css(wyam.io)</td>
+<td>1 KB</td>
+<td>480 ms</td>
+</tr>
+<tr>
+<td>…css/clean-blog.css(wyam.io)</td>
+<td>2 KB</td>
+<td>480 ms</td>
+</tr>
+<tr>
+<td>…css/master.css(wyam.io)</td>
+<td>1 KB</td>
+<td>480 ms</td>
+</tr>
+<tr>
+<td>…css/font-awesome.min.css(wyam.io)</td>
+<td>7 KB</td>
+<td>780 ms</td>
+</tr>
+<tr>
+<td>/css?family=Lora:400,700,400italic,700italic(fonts.googleapis.com)</td>
+<td>1 KB</td>
+<td>780 ms</td>
+</tr>
+<tr>
+<td>/css?family=…(fonts.googleapis.com)</td>
+<td>2 KB</td>
+<td>780 ms</td>
+</tr>
+<tr>
+<td>…css/override.css(wyam.io)</td>
+<td>0 KB</td>
+<td>480 ms</td>
+</tr>
+<tr>
+<td>…js/jquery.min.js(wyam.io)</td>
+<td>30 KB</td>
+<td>1,080 ms</td>
+</tr>
+<tr>
+<td>…js/bootstrap.min.js(wyam.io)</td>
+<td>10 KB</td>
+<td>480 ms</td>
+</tr>
+<tr>
+<td>…js/highlight.pack.js(wyam.io)</td>
+<td>25 KB</td>
+<td>930 ms</td>
+</tr>
+<tr>
+<td>…js/clean-blog.js(wyam.io)</td>
+<td>1 KB</td>
+<td>180 ms</td>
+</tr>
+<tr>
+<td>…js/d3.v3.min.js(wyam.io)</td>
+<td>53 KB</td>
+<td>1,230 ms</td>
+</tr>
+<tr>
+<td>…js/trianglify.min.js(wyam.io)</td>
+<td>5 KB</td>
+<td>330 ms</td>
+</tr>
+<tr>
+<td>…js/Please-compressed.js(wyam.io)</td>
+<td>3 KB</td>
+<td>180 ms</td>
+</tr>
+<tr>
+<td>…js/background-check.min.js(wyam.io)</td>
+<td>4 KB</td>
+<td>180 ms</td>
+</tr>
+</tbody>
+</table>
+<p>That's a lot of resources for a home page with not much happening. Let's break down what's going on with all of this:</p>
 <ul>
-<li>I want it to be fast</li>
-<li>Creating a new post should be simple</li>
-<li>I don't want to write the entire structure myself (blogs are largely a solved problem) but I want to be in control</li>
-<li>I want it to be in a language I've worked with before (less cognitive load)</li>
-<li>I don't want to use a platform that gates posts</li>
-<li>I want to host it for free</li>
-<li>I want deployment to be simple</li>
+<li>Highlight is for code syntax highlighting</li>
+<li>Bootstrap, clean-blog, master and override are the CSS for the blog in general</li>
+<li>Font awesome for the RSS icon</li>
+<li>Font files from google fonts used by the theme</li>
+<li>jquery.min.js, bootstrap.min.js, highlight.pack.js, clean-blog.js for general theme functions</li>
+<li>Background-check for switching text colour depending on the colour in the background on the header</li>
+<li>D3, Trianglify and Please-compressed for generating the image in the header</li>
 </ul>
-<p>The fastest you can get with code is to do nothing. A static site means our page is just an asset to serve, no back-end controllers performing logic to decide the page content or render it out. There are many static site generators and a lot of them have options for creating a blog. After some consideration I chose <a href="https://wyam.io/">Wyam</a>. There are a number of reasons for this:</p>
-<ul>
-<li>It's written in C# and is using .Net Core. I'm fairly comfortable with C# and have been wanting to look more at .Net Core. Wyam pipelines may be a good avenue into it</li>
-<li>RSS and Atom feeds out of the box</li>
-<li>Fast to get going, I was up and running in a couple of minutes</li>
-<li>Some simple themes that are easy to customise</li>
-<li>Posts are just Markdown files</li>
-<li>OSS on GitHub</li>
-</ul>
-<p>Within a few minutes of installing the Wyam CLI tool, following the usage instructions and making some configuration changes to personalise the blog to myself, I had a site up and running locally. I just needed somewhere to host it.</p>
-<h2 id="hosting-on-netlify">Hosting on Netlify</h2>
-<p>I attended a local dev group evening a number of months back and one of the talks was given by a dev advocate for <a href="https://www.netlify.com/">Netlify</a>. Netlify is, at it's a core, a static site host. It takes care of deployment and includes the ability to use a custom domain and automatically provision a Let's Encrypt certificate for it. They provide preview sites for every deploy that's done and any deploy can be chosen to be published as the live version, taking effect in only a few seconds. Deployments can be achieved by pointing at a GitHub repo and allowing webhooks to post whenever commits are pushed. Best of all, it's free for my purposes (I didn't realise until later but the Wyam site is hosted on Netlify). I've found using Netlify to be fast and intuitive and it suits my needs for the present time.</p>
-<h2 id="putting-it-together">Putting it together</h2>
-<p>Having constantly spent a lot of time on scrapped blogs, I found that within a couple of hours of sticking to the MVP strategy I had my blog choices made and had deployed it. Sure it's still using one of the out of the box themes but it's clean and readable which is good enough for an MVP. I can tweak the design going forward to suit my tastes and in the meantime I'll still have a blog on the internet instead of languishing forever in a repo. Focusing on blogging for myself as an archive also removed the pressure of finding something novel and insightful to write about. Hopefully this brief overview of the choices I made provides something useful to someone else who stumbles across it.</p>
+<p>Yup, the image in the header is generated by JavaScript and it's render-blocking. This one's an easy win, we can remove the bottom 4 JavaScript files and replace them with a single webp image which isn't render blocking. Sure it's not quite as cool as generating a triangular mesh that's different per request but it's good enough for my purposes.</p>
+<p>Next I took a look at the font files. We're loading both Lora and Open-Sans in a variety of weights and italics. For my simple blog I don't need all of these. For now I removed all external fonts and I'll revisit the fonts I want on my blog in the future when I look at tweaking the design of the blog itself. In a similar vein I removed the font-awesome file. It was been used for a single icon, the RSS icon. I replaced this with a piece of inline SVG to keep the benefit of using a font without the size of the entire file.</p>
+<p>The final step in this process was to look at the CSS been used by the site. First up was Bootstrap, a lot of the CSS included by default wasn't been used so I used their <a href="https://getbootstrap.com/docs/3.4/customize/">online bundle builder</a> to grab a version of the CSS with only bits I wanted in it. Note that this theme uses Bootstrap 3 and not the newer Bootstrap 4. I took a look at Highlight next. As it was so small I decided to remove the network hit and simple inline it in the page itself. I then did the same with the master.css and clean-blog.css.</p>
 
 
 

@@ -5,8 +5,126 @@
 		<link>http://peterbrooksbank.com/</link>
 		<description>Hi, I'm Peter</description>
 		<copyright>2019</copyright>
-		<pubDate>Wed, 10 Jul 2019 17:53:41 GMT</pubDate>
-		<lastBuildDate>Wed, 10 Jul 2019 17:53:41 GMT</lastBuildDate>
+		<pubDate>Thu, 11 Jul 2019 19:55:02 GMT</pubDate>
+		<lastBuildDate>Thu, 11 Jul 2019 19:55:02 GMT</lastBuildDate>
+		<item>
+			<title>Improving blog page load time</title>
+			<link>http://peterbrooksbank.com/posts/tweaking-wyams-clean-blog-theme</link>
+			<description>&lt;p&gt;The default Wyam blog themes are a good starting point but what can we do to improve load times when we apply a critical eye?&lt;/p&gt;</description>
+			<enclosure url="http://peterbrooksbank.com/assets/img/ripple-scaled-down.webp" length="0" type="image" />
+			<guid>http://peterbrooksbank.com/posts/tweaking-wyams-clean-blog-theme</guid>
+			<pubDate>Thu, 11 Jul 2019 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;p&gt;The default Wyam blog themes are a good starting point but what can we do to improve load times when we apply a critical eye?&lt;/p&gt;
+&lt;p&gt;When I created the blog I chose to use the CleanBlog theme (&lt;a href="https://wyam.io/recipes/blog/themes/preview/cleanblog/"&gt;preview&lt;/a&gt;). This, along with a few others, are provided out of the box by Wyam. They provide an excellent starting point to hit the ground running and a clean base to begin modifying.&lt;/p&gt;
+&lt;h2 id="where-to-start"&gt;Where to start?&lt;/h2&gt;
+&lt;p&gt;Most blogs have the same set of initial priorities, ranging from the overall design to getting some eyes on posts. However, we all have a different order for these priorities. For me the first aspect is page load time, I like making things fast. I get passionate about taking a hot spot in a critical path and finding ways to improve it. Often an impact can be made by simplifying the existing code, refactoring it to reduce the work done and hopefully making it clearer to read in the process.&lt;/p&gt;
+&lt;p&gt;A good place to start with the speed of web pages is &lt;a href="https://developers.google.com/speed/pagespeed/insights/"&gt;PageSpeed Insights by Google&lt;/a&gt; which analyzes the content and then generates suggestions to make that page faster. As performance is now one of the key metrics Google uses for site ranking in their search results, it's worthwhile having a look to see what gets suggested. The scores can fluctuate by a couple of points between runs but I found that several runs gave an average of 73 for the home page. The key takeaway was the time required for render-blocking resources which looked like this:&lt;/p&gt;
+&lt;table class="table"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;URL&lt;/th&gt;
+&lt;th&gt;Size&lt;/th&gt;
+&lt;th&gt;Potential Savings&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;…css/bootstrap.min.css(wyam.io)&lt;/td&gt;
+&lt;td&gt;20 KB&lt;/td&gt;
+&lt;td&gt;1,080 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…css/highlight.css(wyam.io)&lt;/td&gt;
+&lt;td&gt;1 KB&lt;/td&gt;
+&lt;td&gt;480 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…css/clean-blog.css(wyam.io)&lt;/td&gt;
+&lt;td&gt;2 KB&lt;/td&gt;
+&lt;td&gt;480 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…css/master.css(wyam.io)&lt;/td&gt;
+&lt;td&gt;1 KB&lt;/td&gt;
+&lt;td&gt;480 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…css/font-awesome.min.css(wyam.io)&lt;/td&gt;
+&lt;td&gt;7 KB&lt;/td&gt;
+&lt;td&gt;780 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/css?family=Lora:400,700,400italic,700italic(fonts.googleapis.com)&lt;/td&gt;
+&lt;td&gt;1 KB&lt;/td&gt;
+&lt;td&gt;780 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;/css?family=…(fonts.googleapis.com)&lt;/td&gt;
+&lt;td&gt;2 KB&lt;/td&gt;
+&lt;td&gt;780 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…css/override.css(wyam.io)&lt;/td&gt;
+&lt;td&gt;0 KB&lt;/td&gt;
+&lt;td&gt;480 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…js/jquery.min.js(wyam.io)&lt;/td&gt;
+&lt;td&gt;30 KB&lt;/td&gt;
+&lt;td&gt;1,080 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…js/bootstrap.min.js(wyam.io)&lt;/td&gt;
+&lt;td&gt;10 KB&lt;/td&gt;
+&lt;td&gt;480 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…js/highlight.pack.js(wyam.io)&lt;/td&gt;
+&lt;td&gt;25 KB&lt;/td&gt;
+&lt;td&gt;930 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…js/clean-blog.js(wyam.io)&lt;/td&gt;
+&lt;td&gt;1 KB&lt;/td&gt;
+&lt;td&gt;180 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…js/d3.v3.min.js(wyam.io)&lt;/td&gt;
+&lt;td&gt;53 KB&lt;/td&gt;
+&lt;td&gt;1,230 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…js/trianglify.min.js(wyam.io)&lt;/td&gt;
+&lt;td&gt;5 KB&lt;/td&gt;
+&lt;td&gt;330 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…js/Please-compressed.js(wyam.io)&lt;/td&gt;
+&lt;td&gt;3 KB&lt;/td&gt;
+&lt;td&gt;180 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…js/background-check.min.js(wyam.io)&lt;/td&gt;
+&lt;td&gt;4 KB&lt;/td&gt;
+&lt;td&gt;180 ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;That's a lot of resources for a home page with not much happening. Let's break down what's going on with all of this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Highlight is for code syntax highlighting&lt;/li&gt;
+&lt;li&gt;Bootstrap, clean-blog, master and override are the CSS for the blog in general&lt;/li&gt;
+&lt;li&gt;Font awesome for the RSS icon&lt;/li&gt;
+&lt;li&gt;Font files from google fonts used by the theme&lt;/li&gt;
+&lt;li&gt;jquery.min.js, bootstrap.min.js, highlight.pack.js, clean-blog.js for general theme functions&lt;/li&gt;
+&lt;li&gt;Background-check for switching text colour depending on the colour in the background on the header&lt;/li&gt;
+&lt;li&gt;D3, Trianglify and Please-compressed for generating the image in the header&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yup, the image in the header is generated by JavaScript and it's render-blocking. This one's an easy win, we can remove the bottom 4 JavaScript files and replace them with a single webp image which isn't render blocking. Sure it's not quite as cool as generating a triangular mesh that's different per request but it's good enough for my purposes.&lt;/p&gt;
+&lt;p&gt;Next I took a look at the font files. We're loading both Lora and Open-Sans in a variety of weights and italics. For my simple blog I don't need all of these. For now I removed all external fonts and I'll revisit the fonts I want on my blog in the future when I look at tweaking the design of the blog itself. In a similar vein I removed the font-awesome file. It was been used for a single icon, the RSS icon. I replaced this with a piece of inline SVG to keep the benefit of using a font without the size of the entire file.&lt;/p&gt;
+&lt;p&gt;The final step in this process was to look at the CSS been used by the site. First up was Bootstrap, a lot of the CSS included by default wasn't been used so I used their &lt;a href="https://getbootstrap.com/docs/3.4/customize/"&gt;online bundle builder&lt;/a&gt; to grab a version of the CSS with only bits I wanted in it. Note that this theme uses Bootstrap 3 and not the newer Bootstrap 4. I took a look at Highlight next. As it was so small I decided to remove the network hit and simple inline it in the page itself. I then did the same with the master.css and clean-blog.css.&lt;/p&gt;
+</content:encoded>
+		</item>
 		<item>
 			<title>Creating a blog with Wyam</title>
 			<link>http://peterbrooksbank.com/posts/creating-blog-wyam</link>
