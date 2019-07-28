@@ -6,7 +6,7 @@ Tags:
 ---
 A common piece of advice I see on Twitter from people in the industry with blogs is to write the posts for yourself as an archive of what you've done. So what better place to start than this blog?
 
-I've attempted to start a blog several times over the years at this point. It never seems to get out the door, whether it's making sure the design is correct, the performance as fast as possible, the CI/CD pipelines are setup or that SSL is correctly configured. Still, it never gets out the door. Having read [ReWork](https://basecamp.com/books/rework) lately I decided to treat my blog like an MVP (mimimum viable product), getting something out the door and refining it later. 
+I've attempted to start a blog several times over the years at this point. It never seems to get out the door, whether it's making sure the design is correct, the performance as fast as possible, the CI/CD pipelines are setup or that SSL is correctly configured. Still, it never gets out the door. Having read [ReWork](https://basecamp.com/books/rework) lately I decided to treat my blog like an MVP (minimum viable product), getting something out the door and refining it later. 
 
 ## Why Wyam
 
@@ -18,7 +18,7 @@ I have a few key considerations when it comes to creating a blog:
 * I want it to be in a language I've worked with before (less cognitive load)
 * I don't want to use a platform that gates posts
 * I want to host it for free
-* I want deployment to be simple
+* I want the deployment to be simple
 
 The fastest you can get with code is to do nothing. A static site means our page is just an asset to serve, no back-end controllers performing logic to decide the page content or render it out. There are many static site generators and a lot of them have options for creating a blog. After some consideration I chose [Wyam](https://wyam.io/). There are a number of reasons for this:
 
@@ -37,4 +37,4 @@ I attended a local dev group evening a number of months back and one of the talk
 
 ## Putting it together
 
-Having constantly spent a lot of time on scrapped blogs, I found that within a couple of hours of sticking to the MVP strategy I had my blog choices made and had deployed it. Sure it's still using one of the out of the box themes but it's clean and readable which is good enough for an MVP. I can tweak the design going forward to suit my tastes and in the meantime I'll still have a blog on the internet instead of languishing forever in a repo. Focusing on blogging for myself as an archive also removed the pressure of finding something novel and insightful to write about. Hopefully this brief overview of the choices I made provides something useful to someone else who stumbles across it.
+Having constantly spent a lot of time on scrapped blogs, I found that within a couple of hours of sticking to the MVP strategy I had my blog choices made and had deployed it. Sure it's still using one of the out of the box themes but it's clean and readable which is good enough for an MVP. I can tweak the design going forward to suit my tastes and in the meantime, I'll still have a blog on the internet instead of languishing forever in a repo. Focusing on blogging for myself as an archive also removed the pressure of finding something novel and insightful to write about. Hopefully, this brief overview of the choices I made provides something useful to someone else who stumbles across it.

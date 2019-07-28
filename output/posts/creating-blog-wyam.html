@@ -95,7 +95,7 @@ Published on 07 July 2019<br>    </div>
                                         
 
 <p>A common piece of advice I see on Twitter from people in the industry with blogs is to write the posts for yourself as an archive of what you've done. So what better place to start than this blog?</p>
-<p>I've attempted to start a blog several times over the years at this point. It never seems to get out the door, whether it's making sure the design is correct, the performance as fast as possible, the CI/CD pipelines are setup or that SSL is correctly configured. Still, it never gets out the door. Having read <a href="https://basecamp.com/books/rework">ReWork</a> lately I decided to treat my blog like an MVP (mimimum viable product), getting something out the door and refining it later.</p>
+<p>I've attempted to start a blog several times over the years at this point. It never seems to get out the door, whether it's making sure the design is correct, the performance as fast as possible, the CI/CD pipelines are setup or that SSL is correctly configured. Still, it never gets out the door. Having read <a href="https://basecamp.com/books/rework">ReWork</a> lately I decided to treat my blog like an MVP (minimum viable product), getting something out the door and refining it later.</p>
 <h2 id="why-wyam">Why Wyam</h2>
 <p>I have a few key considerations when it comes to creating a blog:</p>
 <ul>
@@ -105,7 +105,7 @@ Published on 07 July 2019<br>    </div>
 <li>I want it to be in a language I've worked with before (less cognitive load)</li>
 <li>I don't want to use a platform that gates posts</li>
 <li>I want to host it for free</li>
-<li>I want deployment to be simple</li>
+<li>I want the deployment to be simple</li>
 </ul>
 <p>The fastest you can get with code is to do nothing. A static site means our page is just an asset to serve, no back-end controllers performing logic to decide the page content or render it out. There are many static site generators and a lot of them have options for creating a blog. After some consideration I chose <a href="https://wyam.io/">Wyam</a>. There are a number of reasons for this:</p>
 <ul>
@@ -120,7 +120,7 @@ Published on 07 July 2019<br>    </div>
 <h2 id="hosting-on-netlify">Hosting on Netlify</h2>
 <p>I attended a local dev group evening a number of months back and one of the talks was given by a dev advocate for <a href="https://www.netlify.com/">Netlify</a>. Netlify is, at it's a core, a static site host. It takes care of deployment and includes the ability to use a custom domain and automatically provision a Let's Encrypt certificate for it. They provide preview sites for every deploy that's done and any deploy can be chosen to be published as the live version, taking effect in only a few seconds. Deployments can be achieved by pointing at a GitHub repo and allowing webhooks to post whenever commits are pushed. Best of all, it's free for my purposes (I didn't realise until later but the Wyam site is hosted on Netlify). I've found using Netlify to be fast and intuitive and it suits my needs for the present time.</p>
 <h2 id="putting-it-together">Putting it together</h2>
-<p>Having constantly spent a lot of time on scrapped blogs, I found that within a couple of hours of sticking to the MVP strategy I had my blog choices made and had deployed it. Sure it's still using one of the out of the box themes but it's clean and readable which is good enough for an MVP. I can tweak the design going forward to suit my tastes and in the meantime I'll still have a blog on the internet instead of languishing forever in a repo. Focusing on blogging for myself as an archive also removed the pressure of finding something novel and insightful to write about. Hopefully this brief overview of the choices I made provides something useful to someone else who stumbles across it.</p>
+<p>Having constantly spent a lot of time on scrapped blogs, I found that within a couple of hours of sticking to the MVP strategy I had my blog choices made and had deployed it. Sure it's still using one of the out of the box themes but it's clean and readable which is good enough for an MVP. I can tweak the design going forward to suit my tastes and in the meantime, I'll still have a blog on the internet instead of languishing forever in a repo. Focusing on blogging for myself as an archive also removed the pressure of finding something novel and insightful to write about. Hopefully, this brief overview of the choices I made provides something useful to someone else who stumbles across it.</p>
 
 
 
