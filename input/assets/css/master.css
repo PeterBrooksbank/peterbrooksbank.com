@@ -95,12 +95,6 @@ header a {
     padding: 0;
 }
 
-.menu__item-container.links a{
-    height:20px;
-    width: 20px;
-    margin: 0 5px;
-}
-
 .menu__item-container.links a.rss *{
     fill: var(--theme-primary);
 }
