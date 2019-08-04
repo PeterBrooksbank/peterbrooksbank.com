@@ -11,23 +11,25 @@ Title: Archive
         .GroupBy(x => x.Get<DateTime>(BlogKeys.Published).Year)
         .OrderByDescending(x => x.Key))
     {
-        <h1>@group.Key</h1>
-        <hr />
+        <h1 class="archive-header">@group.Key</h1>
         @Html.Partial("_PostList", group);
     }
 
+    @if(Model.Bool(Keys.HasPreviousPage) || Model.Bool(Keys.HasNextPage))
+    {
     <ul class="pager">
-        <li class="previous">                
-            @if(Model.Bool(Keys.HasPreviousPage))
-            {
+        @if(Model.Bool(Keys.HasPreviousPage))
+        {
+            <li class="previous">
                 <a href="@(Context.GetLink(Model.Document(Keys.PreviousPage)))"><span aria-hidden="true">&larr;</span> Newer</a>
-            }                
-        </li>
-        <li class="next">
-            @if(Model.Bool(Keys.HasNextPage))
-            {
-                <a href="@(Context.GetLink(Model.Document(Keys.NextPage)))">Older <span aria-hidden="true">&rarr;</span></a>
-            }
-        </li>
+            </li>
+        }
+        @if(Model.Bool(Keys.HasNextPage))             
+        {
+            <li class="next">           
+                <a href="@(Context.GetLink(Model.Document(Keys.NextPage)))">Older <span aria-hidden="true">&rarr;</span></a>            
+            </li>
+        }
     </ul>
+    }
 }

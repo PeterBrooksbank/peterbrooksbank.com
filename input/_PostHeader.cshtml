@@ -4,6 +4,7 @@
     var Tags = Model.Get<string[]>(BlogKeys.Tags);
 }
 
+<a class="back-link" href="/posts/"><- Back to posts</a>
 <div class="post-heading">
     <h1>@Model.WithoutSettings.String(BlogKeys.Title)</h1>
     @if(!string.IsNullOrWhiteSpace(Lead))
@@ -13,20 +14,7 @@
     <div class="meta">        
         @if (Published != default(DateTime))
         {
-            <text>Published on @Published.ToLongDateString(Context)<br></text>
+            <text>Posted on @Published.ToLongDateString(Context)<br></text>
         }
     </div>
-    @if (Tags != null)
-    {
-        <div class="tags">
-            @foreach (string tag in Tags.OrderBy(x => x))
-            {
-                IDocument tagDocument = Documents[Blog.Tags].FirstOrDefault(x => x.String(BlogKeys.Tag) == tag && x.Get<int>(Keys.CurrentPage) == 1);
-                if(tagDocument != null)
-                {                
-                    <a role="button" href="@Context.GetLink(tagDocument)" class="btn btn-default btn-xs">@tag</a>
-                }
-            }
-        </div>     
-    } 
 </div>

@@ -13,11 +13,15 @@
                     <h4 class="post-subtitle">@lead</h4>
                 }
             </a>
-            <p class="post-meta">Posted on @(post.Get<DateTime>(BlogKeys.Published).ToLongDateString(Context))</p>      
-            @if(Context.Bool(BlogKeys.ArchiveExcerpts))
+            <p class="post-meta">@(post.Get<DateTime>(BlogKeys.Published).ToLongDateString(Context))</p>      
+            @if(Context.Bool(BlogKeys.IndexFullPosts))
+            {
+                @Html.Raw(post.Content)
+            }
+            else
             {
                 @Html.Raw(post.String(BlogKeys.Excerpt))
-            }            
-        </div>   
+            }         
+        </div>
     }
 }

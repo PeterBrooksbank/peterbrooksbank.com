@@ -3,15 +3,14 @@
 	<channel>
 		<title>Peter Brooksbank</title>
 		<link>http://peterbrooksbank.com/</link>
-		<description>Hi, I'm Peter. I'm a software developer.</description>
+		<description />
 		<copyright>2019</copyright>
-		<pubDate>Sun, 04 Aug 2019 20:35:59 GMT</pubDate>
-		<lastBuildDate>Sun, 04 Aug 2019 20:35:59 GMT</lastBuildDate>
+		<pubDate>Sun, 04 Aug 2019 22:44:16 GMT</pubDate>
+		<lastBuildDate>Sun, 04 Aug 2019 22:44:16 GMT</lastBuildDate>
 		<item>
 			<title>Improving blog page load time</title>
 			<link>http://peterbrooksbank.com/posts/improving-wyam-cleanblog-page-load-time</link>
 			<description>&lt;p&gt;Page load time matters. Users are impatient and even Google now uses it as metric in their search results ranking. The default Wyam blog themes are a good starting point but what small changes can we make to improve page load times?&lt;/p&gt;</description>
-			<enclosure url="http://peterbrooksbank.com/assets/img/ripple-scaled-down.webp" length="0" type="image" />
 			<guid>http://peterbrooksbank.com/posts/improving-wyam-cleanblog-page-load-time</guid>
 			<pubDate>Thu, 11 Jul 2019 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;Page load time matters. Users are impatient and even Google now uses it as metric in their search results ranking. The default Wyam blog themes are a good starting point but what small changes can we make to improve page load times?&lt;/p&gt;
@@ -166,7 +165,6 @@
 			<title>Creating a blog with Wyam</title>
 			<link>http://peterbrooksbank.com/posts/creating-blog-wyam</link>
 			<description>&lt;p&gt;A common piece of advice I see on Twitter from people in the industry with blogs is to write the posts for yourself as an archive of what you've done. So what better place to start than this blog?&lt;/p&gt;</description>
-			<enclosure url="http://peterbrooksbank.com/assets/img/ripple-scaled-down.webp" length="0" type="image" />
 			<guid>http://peterbrooksbank.com/posts/creating-blog-wyam</guid>
 			<pubDate>Sun, 07 Jul 2019 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;A common piece of advice I see on Twitter from people in the industry with blogs is to write the posts for yourself as an archive of what you've done. So what better place to start than this blog?&lt;/p&gt;
