@@ -1,15 +1,11 @@
 <div class="index-content">
-    <img src="/assets/img/walking-laptop_2du2.svg" alt="Portfolio Website" style="margin-top: 30px;">
+    <img src="/assets/img/quitting_time_dm8t.svg" alt="Leaving office" style="margin-top: 30px;">
     @if(Context.String(BlogKeys.Description) != null)
     {
         <h1>@Context.String(BlogKeys.Description)</h1>
     }
     @if(Context.String(BlogKeys.Intro) != null)
-    {            
-        @if(Context.String(BlogKeys.Description) != null)
-        {
-            <hr class="small">
-        }
+    { 
         <span class="subheading">@Context.String(BlogKeys.Intro)</span>
     }
 </div>
