@@ -30,11 +30,8 @@
 		<meta property="og:title" content="@PageTitle" />
 		@* <meta property="og:image" content="@Blog.Image" /> *@
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="@Context.GetLink(Model, true)" />       
+		<meta property="og:url" content="@Context.GetLink(Model, true)" />
 
-		<script src="@Context.GetLink("/assets/js/jquery-3.4.1.slim.min.js")"></script>
-		<script src="@Context.GetLink("/assets/js/bootstrap.min.js")" defer async></script>
-						
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -77,15 +74,8 @@
 			@await Html.PartialAsync("_Footer")
 		</footer> 
 		-->
-		<link href="@Context.GetLink("/assets/css/master-clean.css")" rel="stylesheet" />     
-
-		<!--
-		<link href="@Context.GetLink("/assets/css/bootstrap.min.css")" rel="stylesheet" />                
-		<link href="@Context.GetLink("/assets/css/clean-blog.css")" rel="stylesheet" />                
-		@await Html.PartialAsync("_InlineCSS")
-		-->
-		<script src="@Context.GetLink("/assets/js/highlight.pack.js")"></script>   
-		<script src="@Context.GetLink("/assets/js/clean-blog.js")" defer async></script>
+		<link href="@Context.GetLink("/assets/css/master.css")" rel="stylesheet" />
+		<script src="@Context.GetLink("/assets/js/highlight.pack.js")"></script>
 		
 		@await Html.PartialAsync("_Scripts")
 		<script>
