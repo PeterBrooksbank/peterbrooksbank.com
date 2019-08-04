@@ -1,7 +1,19 @@
-@section Header {
-    @Html.Partial("_IndexHeader")
-}
-
+<div class="index-content">
+    <img src="/assets/img/walking-laptop_2du2.svg" alt="Portfolio Website" style="margin-top: 30px;">
+    @if(Context.String(BlogKeys.Description) != null)
+    {
+        <h1>@Context.String(BlogKeys.Description)</h1>
+    }
+    @if(Context.String(BlogKeys.Intro) != null)
+    {            
+        @if(Context.String(BlogKeys.Description) != null)
+        {
+            <hr class="small">
+        }
+        <span class="subheading">@Context.String(BlogKeys.Intro)</span>
+    }
+</div>
+<!--
 <div class="row">
     <div class="col-sm-8 right-border">
         @{
@@ -97,3 +109,4 @@
         @Html.Partial("_Sidebar")
     </div> 
 </div>
+-->

@@ -1,6 +1,6 @@
 <section class="menu__section">
-    <ul class="menu">
-        <li><a class='menu__item @(Context.GetLink("/index.html"))' href="/">Home</a></li>
+    <ul class="menu__container">
+        <li class="menu__item-container"><a class='menu__item @(Context.GetLink("/index.html"))' href="/">Home</a></li>
         @{
             List<Tuple<string, string>> pages = Context
                 .Documents[Blog.Pages]
@@ -10,19 +10,36 @@
                 .Where(x => !string.IsNullOrEmpty(x.Item1))
                 .OrderBy(x => x.Item1)
                 .ToList();
-            if(Documents[Blog.Tags].Any())
-            {
-                pages.Insert(0, Tuple.Create("Tags", Context.GetLink("tags/index.html")));
-            }
+            //if(Documents[Blog.Tags].Any())
+            //{
+            //    pages.Insert(1, Tuple.Create("Tags", Context.GetLink("tags/index.html")));
+            //}
             if(Documents[Blog.BlogPosts].Any() && Context.Bool(BlogKeys.GenerateArchive))
             {
-                pages.Insert(0, Tuple.Create("Blog", Context.GetLink(Context.String(BlogKeys.PostsPath) + "/index.html")));
+                pages.Insert(1, Tuple.Create("Blog", Context.GetLink(Context.String(BlogKeys.PostsPath) + "/index.html")));
             }
             foreach(Tuple<string, string> page in pages)
             {
-                <li><a class="menu__item" href="@(page.Item2)">@(page.Item1)</a></li>
+                <li class="menu__item-container"><a class="menu__item" href="@(page.Item2)">@(page.Item1)</a></li>
             }
         }
+        <li class="menu__item-container links">
+            <a class="twitter" href="https://twitter.com/PeterBrooksbank">
+                <svg viewBox="0 0 16 16">
+                    <title>Twitter</title>
+                    <path fill="#55acee" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                    c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"></path>
+                </svg>
+            </a>
+            <a class="rss" href="@Context.GetLink(Context.String(BlogKeys.RssPath))">
+                <svg viewBox="0 0 16 16">
+                    <title>Feed</title>
+                    <circle fill="#f79d58" cx="1.9" cy="14" r="1.8"></circle>
+                    <path fill="#f79d58" d="M8.9,15.8H6.3c0-3.5-2.8-6.2-6.2-6.2l0,0V7C5,7,8.9,10.9,8.9,15.8z"></path>
+                    <path fill="#f79d58" d="M10.8,15.8C10.8,9.9,6,5.1,0.1,5.1V2.5c7.4,0,13.3,6,13.3,13.3H10.8z"></path>
+                  </svg>
+            </a>            
+        </li>                    
     </ul>
     <script>
         (function(){
