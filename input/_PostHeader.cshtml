@@ -11,10 +11,10 @@
     {
         <h2 class="subheading">@Lead</h2>
     }            
-    <div class="meta">        
+    <div class="post-meta">        
         @if (Published != default(DateTime))
         {
-            <text>Posted on @Published.ToLongDateString(Context)<br></text>
+            <text>@Published.ToLongDateString(Context)<br></text>
         }
     </div>
 </div>

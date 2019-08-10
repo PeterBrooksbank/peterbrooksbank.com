@@ -17,13 +17,13 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-weight: 700;
-    font-size: 2.25rem;
+    font-weight: 200;
+    font-size: 2.75em;
 }
 
 h2 {
-    font-weight: 700;
-    font-size: 2.1rem;
+    font-weight: 200;
+    font-size: 2.25rem;
 }
 
 h3 {
@@ -180,7 +180,10 @@ header a {
 }
 
 .post-meta {
-    font-weight: 700;
+    font-weight: 250;
+    font-size: 22px;
+    margin-block-start: 0;    
+    color: var(--secondary-text);
 }
 
 .back-link {
@@ -193,14 +196,6 @@ header a {
 
 .post-heading {
     padding-bottom: 25px;
-}
-
-.post-heading h1 {
-    padding-bottom: 15px
-}
-
-.post-heading .meta {
-    color: var(--secondary-text);
 }
 
 table, td, tr, th {
