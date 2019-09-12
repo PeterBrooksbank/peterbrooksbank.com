@@ -108,9 +108,8 @@ const sw = 260;
 const sh = 40;
 const pixelRatio = 2;
 
-function init() {
+(function(){
     canvas = document.createElement('canvas');
-    //document.body.appendChild(canvas);
     let headerLink = document.getElementById("blog-title");
     headerLink.appendChild(canvas);
     ctx = canvas.getContext("2d");
@@ -120,7 +119,9 @@ function init() {
     canvas.style.width = sw + 'px';
     canvas.style.height = sh + 'px';
     ctx.scale(pixelRatio, pixelRatio);
+})();
 
+function initLeon() {
     leon = new LeonSans({
         text: 'Peter Brooksbank',
         color: ['#000000'],
@@ -150,12 +151,11 @@ function animate(t) {
     const y = (sh - leon.rect.h) / 2;
     leon.position(x, y);
 
-    leon.draw(ctx);
-    
+    leon.draw(ctx);    
 }
 
 window.onload = () => {
-    init();
+    initLeon();
 };
 </script>
 		<script>
