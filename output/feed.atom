@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<link rel="self" href="http://peterbrooksbank.com/" />
 	<id>http://peterbrooksbank.com/</id>
 	<title>Peter Brooksbank</title>
+	<link rel="self" href="http://peterbrooksbank.com/" />
 	<rights>2019</rights>
 	<updated>2019-10-13T16:48:07Z</updated>
 	<entry>
-		<link href="http://peterbrooksbank.com/posts/improving-wyam-cleanblog-page-load-time" />
 		<id>http://peterbrooksbank.com/posts/improving-wyam-cleanblog-page-load-time</id>
 		<title>Improving blog page load time</title>
+		<link href="http://peterbrooksbank.com/posts/improving-wyam-cleanblog-page-load-time" />
 		<updated>2019-07-11T00:00:00Z</updated>
 		<content>&lt;p&gt;Page load time matters. Users are impatient and even Google now uses it as metric in their search results ranking. The default Wyam blog themes are a good starting point but what small changes can we make to improve page load times?&lt;/p&gt;
 &lt;p&gt;When I created the blog I chose to use the CleanBlog theme (&lt;a href="https://wyam.io/recipes/blog/themes/preview/cleanblog/"&gt;preview&lt;/a&gt;). This, along with a few others, is provided out of the box by Wyam. They provide an excellent starting point to hit the ground running and a clean base to begin modifying.&lt;/p&gt;
@@ -160,9 +160,9 @@
 		<summary>&lt;p&gt;Page load time matters. Users are impatient and even Google now uses it as metric in their search results ranking. The default Wyam blog themes are a good starting point but what small changes can we make to improve page load times?&lt;/p&gt;</summary>
 	</entry>
 	<entry>
-		<link href="http://peterbrooksbank.com/posts/creating-blog-wyam" />
 		<id>http://peterbrooksbank.com/posts/creating-blog-wyam</id>
 		<title>Creating a blog with Wyam</title>
+		<link href="http://peterbrooksbank.com/posts/creating-blog-wyam" />
 		<updated>2019-07-07T00:00:00Z</updated>
 		<content>&lt;p&gt;A common piece of advice I see on Twitter from people in the industry with blogs is to write the posts for yourself as an archive of what you've done. So what better place to start than this blog?&lt;/p&gt;
 &lt;p&gt;I've attempted to start a blog several times over the years at this point. It never seems to get out the door, whether it's making sure the design is correct, the performance as fast as possible, the CI/CD pipelines are setup or that SSL is correctly configured. Still, it never gets out the door. Having read &lt;a href="https://basecamp.com/books/rework"&gt;ReWork&lt;/a&gt; lately I decided to treat my blog like an MVP (minimum viable product), getting something out the door and refining it later.&lt;/p&gt;
