@@ -4,7 +4,6 @@ My name is Peter Brooksbank. I'm a software developer. I blog about things that 
 
 
 ### 2013
-***
 
 In 2013 I graduated from the University of Hull with a Master of Engineering in Computer Science. I had an enjoyable 4 years and took part in multiple opportunities for 24hr team game jams which were always a great time. In my masters year I worked within the departments in-house software company SEED. My team developed the ACTV System, a means of tracking Fire Service assets and visualising the coverage provided by those assets via real-time coverage maps and hypothetical scenarios.
 
@@ -19,13 +18,11 @@ I worked on all levels of the project stack, including:
 
 
 ### 2016
-***
 
 In December of 2016 I started working for PureClarity, providing an ecommerce personalisation platform that focuses on delivering product recommendations powered by machine learning. Utilising AWS to provide a global SAAS has provided a wide range of opportunities to learn and grow.
 
 
 
 ### 2019
-***
 
 Today I work on developing new features for PureClarity as well as ensuring it remains performant and scales to cope with new client demand. I get to develop using Typescript, Node, Redis, Angular alongside a whole host of services on AWS such as DynamoDB, EC2, SQS and more.

@@ -30,6 +30,17 @@ h3 {
     font-weight: 300;
     font-size: 2rem;
     padding-top: 20px;
+    position: relative;
+}
+
+h3:after {
+    content:'';
+    position: absolute;
+    background-color: var(--theme-primary);
+    width: 92%;
+    height: 2px;
+    bottom: 15px;
+    right: 0;
 }
 
 img {
@@ -166,8 +177,18 @@ header a {
 /** Posts **/
 
 .archive-header {
-    border-bottom: 1px solid #efefef;
-    margin-bottom: 50px;
+    position: relative;
+    margin: 25px 0;
+}
+
+.archive-header:after {
+    content:'';
+    position: absolute;
+    background-color: var(--theme-primary);
+    width: 90%;
+    height: 2px;
+    bottom: 20px;
+    right: 0;
 }
 
 .post-list {
