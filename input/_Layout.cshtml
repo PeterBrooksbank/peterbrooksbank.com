@@ -45,25 +45,17 @@
 			</a>    
 			@await Html.PartialAsync("_Navbar")
 		</header>
-		<div>
-			<div>
+			@if(IsSectionDefined("Header"))
+			{
 				<div>
-					@if(IsSectionDefined("Header"))
-					{
-						@RenderSection("Header")
-					}
+				@RenderSection("Header")
 				</div>
-			</div>
-		</div>
+			}
 		
 		<!-- Main Content -->
-		<div>
-			<div>
-				<div id="content">
-					@RenderBody()
-				</div>
-			</div>
-		</div>		
+		<div id="content">
+			@RenderBody()
+		</div>
 		
 		<script src="@Context.GetLink("/assets/js/highlight.pack.js")"></script>
 		<script src="@Context.GetLink("/assets/js/tweenmax.min.js")"></script>
