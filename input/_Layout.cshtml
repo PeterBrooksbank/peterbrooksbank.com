@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>		
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 		<link href='@Context.GetLink("/assets/css/master.css")' rel="stylesheet" />
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -38,11 +39,14 @@
 		<![endif]-->
 		
 		@await Html.PartialAsync("_Head")
+		@if(IsSectionDefined("CSS"))
+		{
+			@RenderSection("CSS")
+		}
 	</head>
 	<body>
+		<!-- 
 		<header>
-			<a id="blog-title" class="header__link" href="@Context.GetLink("/")">
-			</a>    
 			@await Html.PartialAsync("_Navbar")
 		</header>
 			@if(IsSectionDefined("Header"))
@@ -51,7 +55,7 @@
 				@RenderSection("Header")
 				</div>
 			}
-		
+		-->
 		<!-- Main Content -->
 		<div id="content">
 			@RenderBody()

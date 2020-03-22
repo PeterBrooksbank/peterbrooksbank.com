@@ -8,7 +8,15 @@ Settings[BlogKeys.Intro] = "";
 
 
 // Add any pipeline customizations here
+#n Wyam.Sass
 #n Wyam.Minification
+
+Pipelines.Add("SassPipe",
+    ReadFiles("index.scss"),
+    Concat(ReadFiles("master.css")),
+    Sass().WithCompactOutputStyle(),
+    WriteFiles(".css")
+);
 
 Pipelines.InsertAfter
 (
